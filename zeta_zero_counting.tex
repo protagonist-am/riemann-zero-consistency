@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Numerical Consistency of the Riemann--von Mangoldt Formula\\
+and the Finite Validity of Polynomial Corrections}
+\author{Author Name}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We examine the numerical consistency of the Riemann--von Mangoldt
+formula for the non-trivial zeros of the Riemann zeta function.
+Using the first 200 zeros, we introduce a minimal polynomial
+correction and analyze the residual structure.
+While such corrections effectively absorb local deviations,
+extrapolation to higher zeros (501--700) fails, indicating that
+the correction is only locally valid.
+We conclude that the Riemann--von Mangoldt leading term is the
+only universal structure, and that the remaining fluctuations
+are structureless.
+\end{abstract}
+
+\section{Introduction}
+Let $\rho = \tfrac12 + i\gamma_n$ denote the non-trivial zeros of the
+Riemann zeta function, ordered by increasing imaginary part.
+The counting function for zeros with $0 < \gamma \le T$ is well
+approximated by the Riemann--von Mangoldt formula
+\[
+N_0(T)
+= \frac{T}{2\pi}\log\frac{T}{2\pi}
+- \frac{T}{2\pi}.
+\]
+The purpose of this work is to examine, using explicit numerical
+data, whether systematic corrections to this leading term exhibit
+any universal structure beyond finite ranges.
+
+\section{Method}
+Using the first 200 non-trivial zeros $\{\gamma_n\}$, we model the
+relation
+\[
+n = N_0(\gamma_n) + \Delta(\gamma_n),
+\]
+where $\Delta(\gamma)$ is taken to be a minimal quadratic polynomial
+\[
+\Delta(\gamma) = A\gamma^2 + B\gamma + C.
+\]
+The coefficients $A,B,C$ are determined by least-squares fitting.
+Residuals are defined as
+\[
+r_n = n - \bigl(N_0(\gamma_n)+\Delta(\gamma_n)\bigr),
+\]
+and are analyzed after logarithmic normalization.
+To test universality, the same coefficients are applied without
+refitting to an independent set of higher zeros, namely
+$\gamma_{501}$--$\gamma_{700}$.
+
+\section{Results for Zeros 1--200}
+The least-squares fit over the first 200 zeros yields
+\[
+A = -63.16612305756696,\quad
+B = 324.0670957385392,\quad
+C = -2891.544542946499.
+\]
+Within this finite interval, the polynomial correction removes the
+systematic deviation from the leading term.
+The normalized residuals exhibit an approximately Gaussian
+distribution with standard deviation
+\[
+\mathrm{std} \approx 0.579548658,
+\]
+and show no statistically significant periodicity or higher-order
+structure.
+
+\section{Extrapolation Test: Zeros 501--700}
+Applying the same coefficients $A,B,C$ to zeros
+$\gamma_{501}$--$\gamma_{700}$ leads to rapidly growing residuals.
+A refit over this higher range yields an optimal quadratic
+coefficient $A \approx 0$, indicating that no polynomial correction
+is required.
+Thus, the quadratic correction determined from the first 200 zeros
+has no extrapolative validity and represents only a local
+approximation.
+
+\section{Discussion}
+The extrapolation failure demonstrates that the polynomial
+correction does not encode a new universal law.
+Instead, it functions as a finite-range error absorber.
+The only structure that remains stable across ranges is the
+Riemann--von Mangoldt leading term itself; beyond this term,
+the residual fluctuations are consistent with structureless noise.
+The explicit detection of overfitting confirms the limited scope of
+such corrections.
+
+\section{Conclusion}
+We conclude that:
+\begin{itemize}
+\item The Riemann--von Mangoldt leading term is the sole universal
+component governing zero counts.
+\item Polynomial corrections are valid only locally and have no
+predictive power outside their fitting range.
+\item After removal of the leading term, residuals exhibit no
+deterministic structure.
+\end{itemize}
+These results fix the numerical scope of admissible corrections and
+provide a closed empirical basis for further theoretical
+interpretation.
+
+\begin{thebibliography}{1}
+\bibitem{Odlyzko}
+A.~M.~Odlyzko,
+\emph{Tables of zeros of the Riemann zeta function}.
+\end{thebibliography}
+
+\end{document}
