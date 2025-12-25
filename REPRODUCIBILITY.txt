@@ -1,0 +1,10 @@
+Data:
+Non-trivial zeros of the Riemann zeta function from standard published tables (e.g. Odlyzko).
+
+Method:
+Least-squares fitting of a quadratic correction over zeros 1–200.
+Extrapolation test using the same coefficients over zeros 501–700.
+
+Result:
+Polynomial correction is finite-range only.
+The Riemann–von Mangoldt leading term is universal.
